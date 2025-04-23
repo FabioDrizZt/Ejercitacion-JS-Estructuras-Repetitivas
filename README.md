@@ -19,10 +19,12 @@ Este repositorio contiene una serie de ejercicios de estructuras repetitivas en 
 13. Escribir un programa que lea valores enteros hasta que se introduzca un 0 y calcule la media de los positivos y la media de los negativos.
 14. Leer 10 valores desde teclado y mostrar la media de los pares y la media de los impares. Hacer tres versiones, con un bucle: para, mientras y repetir. Repetir el ejercicio considerando que el número de valores se le solicita al usuario.
 15. Escribir un programa que lea números enteros de teclado hasta que encuentre uno que cumpla las siguientes condiciones:
-   - Múltiplo de 2.
-   - No múltiplo de 5.
-   - Mayor que 100.
-   - Menor que 10.000.
+
+- Múltiplo de 2.
+- No múltiplo de 5.
+- Mayor que 100.
+- Menor que 10.000.
+
 16. En 1994 el país A tiene una población de 25 millones de habitantes y el país B de 19.9 millones. Las tasas de crecimiento de la población son de 2% y 3% respectivamente. Desarrollar un algoritmo para informar en qué año la población del país B supera a la de A.
 17. Un ciclista recorre diariamente 200 kilómetros en su práctica competitiva. El atleta solicita un algoritmo que le permita registrar el tiempo empleado en cada recorrido, al final del proceso el algoritmo debería mostrar el promedio de los tiempos empleados. También necesita saber cuántas veces su tiempo fue menor a un valor dado y cuál fue su mejor tiempo realizado.
 18. Un censista recopila ciertos datos aplicando encuestas para el último Censo Nacional de Población y Vivienda. Desea procesar los datos de todas las personas que alcance a encuestar en un día y obtener los porcentajes de estudios de niveles primario, secundario, superior no universitario, universitario y de postgrado.
@@ -31,9 +33,73 @@ Este repositorio contiene una serie de ejercicios de estructuras repetitivas en 
 21. Se ofrece un trabajo que pague un centavo en la primera semana y dobla su salario cada semana, es decir, $0.01 la primera semana; $0.02 la segunda semana; $0.04 la tercera semana; $(2^n-1)/100 la n-ésima semana. Determine el salario por cada semana y el salario pagado hasta la fecha por espacio de n semanas.
 22. Calcular la nota promedio de un salón de clase y la nota mayor y el código del estudiante que la obtuvo, validar que las notas ingresadas se encuentren en el intervalo [0,10]. El ingreso de notas finaliza a pedido del operador.
 23. Escribir un programa que vaya pidiendo al usuario valores enteros hasta que introduzca un valor negativo, después debe indicar los 3 valores mayores. Por ejemplo, si el usuario introduce los números: 1, 34, 45, 3, 2, 10, 9, 8, 78, 55, 3, 78, 43 y -5, el programa deberá mostrar: 78, 55, 45. Nótese que en el ejemplo el valor 78 aparece dos veces, pero solo se considera una vez entre los tres mayores. Es decir, los valores máximos repetidos únicamente se tienen en cuenta una vez. El orden en el que aparezcan los 3 valores máximos es irrelevante. Aunque en el ejemplo salgan ordenados de mayor a menor, al revés o sin orden también es correcto. Si el usuario introduce menos de tres valores el programa sólo mostrará como mayores los que se han introducido. Por ejemplo, si el usuario introduce: 3, 78, -5, la solución será: 3, 78.
-24. Un galpón tiene al comienzo de la jornada una cantidad inicial (Stock inicial) de cajones con productos de un solo tipo, luego repetidamente, entran y salen camiones, que traen o llevan cantidades de cajones. Si no alcanza la cantidad a llevar, se debe mostrar un mensaje “NO ALCANZA”, se lleva todo lo que hay; se muestra lo que se lleva y el galpón queda vacío. Se muestra al final de la jornada cuántos cajones hay en el galpón (Stock final), y cuántos cajones ingresaron y cuántos cajones salieron en toda la jornada. Ejemplo:
+24. Un galpón tiene al comienzo de la jornada una cantidad inicial (Stock inicial) de cajones con productos de un solo tipo, luego repetidamente, entran y salen camiones, que traen o llevan cantidades de cajones. Si no alcanza la cantidad a llevar, se debe mostrar un mensaje "NO ALCANZA", se lleva todo lo que hay; se muestra lo que se lleva y el galpón queda vacío. Se muestra al final de la jornada cuántos cajones hay en el galpón (Stock final), y cuántos cajones ingresaron y cuántos cajones salieron en toda la jornada. Ejemplo:
 25. Un autobús hace un recorrido por una ciudad desde un punto inicial donde suben N personas hasta un punto final donde descienden todas. El autobús realiza X paradas intermedias. Se sabe que en las paradas intermedias suben siempre 3 personas más que en la parada anterior y que desciende el 50% de la gente del autobús (sin contar los que suben en dicha parada). ¿Cuántas personas llegarán hasta el final del trayecto? Pedir al usuario los valores de N y X. Por ejemplo, para N = 10 y X = 3:
 
+## Cómo Autoevaluar tus Ejercicios
+
+Para verificar si tus soluciones son correctas, hemos incluido tests automatizados para cada ejercicio. Sigue estos pasos:
+
+### Preparación del Entorno
+
+1. Asegúrate de tener Node.js instalado en tu computadora
+2. Abre una terminal en la carpeta del proyecto
+3. Instala las dependencias necesarias:
+
+```bash
+npm install
+```
+
+### Ejecutando los Tests
+
+Tienes varias opciones para ejecutar los tests:
+
+1. Para ejecutar todos los tests:
+
+```bash
+npm test
+```
+
+2. Para ejecutar los tests de un ejercicio específico:
+
+```bash
+npm test ejercicioXX
+```
+
+Reemplaza XX con el número del ejercicio (por ejemplo: `npm test ejercicio01`)
+
+3. Para ejecutar los tests en modo watch (se actualizan automáticamente al guardar cambios):
+
+```bash
+npm run test:watch
+```
+
+4. Para ver la cobertura de los tests:
+
+```bash
+npm run test:coverage
+```
+
+### Interpretando los Resultados
+
+- ✅ Verde: El test ha pasado correctamente
+- ❌ Rojo: El test ha fallado
+- Los mensajes de error te indicarán:
+  - Qué se esperaba que hiciera tu código
+  - Qué hizo realmente tu código
+  - En qué línea está el error
+
+### Tips para Resolver los Ejercicios
+
+1. Lee cuidadosamente el enunciado del ejercicio
+2. Revisa los tests del ejercicio para entender qué se espera de tu solución
+3. Implementa tu solución en el archivo correspondiente
+4. Ejecuta los tests para verificar tu solución
+5. Si los tests fallan:
+   - Lee cuidadosamente el mensaje de error
+   - Revisa la lógica de tu solución
+   - Haz cambios y vuelve a ejecutar los tests
+6. No avances al siguiente ejercicio hasta que todos los tests del ejercicio actual pasen
 
 ## Instrucciones
 
@@ -46,9 +112,11 @@ Este repositorio contiene una serie de ejercicios de estructuras repetitivas en 
 
 1. Abre tu terminal o línea de comandos.
 2. Escribe el siguiente comando para clonar tu fork del repositorio:
+
 ```bash
 git clone https://github.com/TU_USUARIO/Ejercitacion-JS-Estructuras-Repetitivas.git
 ```
+
 Reemplaza TU_USUARIO con tu nombre de usuario de GitHub.
 
 3. Navega al directorio del repositorio clonado y abre con vscode:
@@ -59,6 +127,7 @@ code .
 ```
 
 ### Ejercicios
+
 Cada archivo ejercicioXX.js contiene la estructura básica de un ejercicio. Lee el enunciado correspondiente y resuelve el ejercicio dentro del archivo.
 
 ¡Buena suerte y feliz codificación!

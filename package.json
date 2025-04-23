@@ -1,0 +1,13 @@
+{
+  "name": "ejercitacion-js-estructuras-repetitivas",
+  "version": "1.0.0",
+  "description": "Ejercicios de estructuras repetitivas en JavaScript con tests",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+} 
