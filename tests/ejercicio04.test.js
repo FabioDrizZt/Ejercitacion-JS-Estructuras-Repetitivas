@@ -1,21 +1,23 @@
-const { generarImparesHasta999, generarParesHasta1000 } = require('../ejercicio04');
+const { listadoImpares, listadoPares } = require('../ejercicio04');
 
-describe('Ejercicio 4 - Listados de números pares e impares', () => {
-  test('Debe generar lista correcta de impares hasta 999', () => {
-    const impares = generarImparesHasta999();
-    expect(impares).toHaveLength(500);
-    impares.forEach(num => {
-      expect(num % 2).toBe(1);
-      expect(num).toBeLessThanOrEqual(999);
-    });
+describe('Ejercicio 4 - Listados de números pares e impares (sin funciones ni arrays)', () => {
+  test('Debe generar el listado correcto de impares hasta 999', () => {
+    const impares = [];
+    for (let i = 1; i <= 999; i += 2) {
+      impares.push(i);
+    }
+    const esperado = impares.join(', ');
+
+    expect(listadoImpares).toBe(esperado);
   });
 
-  test('Debe generar lista correcta de pares hasta 1000', () => {
-    const pares = generarParesHasta1000();
-    expect(pares).toHaveLength(500);
-    pares.forEach(num => {
-      expect(num % 2).toBe(0);
-      expect(num).toBeLessThanOrEqual(1000);
-    });
+  test('Debe generar el listado correcto de pares hasta 1000', () => {
+    const pares = [];
+    for (let i = 2; i <= 1000; i += 2) {
+      pares.push(i);
+    }
+    const esperado = pares.join(', ');
+
+    expect(listadoPares).toBe(esperado);
   });
 }); 

@@ -1,13 +1,13 @@
-const { encontrarMayorMenor } = require('../ejercicio12');
+const { mayor, menor } = require('../ejercicio12');
 
-describe('Ejercicio 12 - Mayor y menor de 20 números', () => {
-  test('Debe encontrar mayor y menor correctamente', () => {
-    const numeros = [5, 2, 8, 1, 9, 3, 7, 4, 6, 10,
-                     15, 12, 18, 11, 19, 13, 17, 14, 16, 20];
-    const resultado = encontrarMayorMenor(numeros);
-    expect(resultado).toEqual({
-      mayor: 20,
-      menor: 1
-    });
+describe('Ejercicio 12 - Mayor y menor de 20 números (sin funciones ni arrays)', () => {
+  // Los 20 números de entrada están definidos en `ejercicio12.js`.
+  test('Debe encontrar el mayor y el menor correctamente', () => {
+    // Para el conjunto de números dado, el mayor es 20 y el menor es 1.
+    const esperadoMayor = 20;
+    const esperadoMenor = 1;
+
+    expect(mayor).toBe(esperadoMayor);
+    expect(menor).toBe(esperadoMenor);
   });
 }); 

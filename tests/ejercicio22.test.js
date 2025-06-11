@@ -1,4 +1,5 @@
 const { calcularEstadisticasNotas } = require('../ejercicio22');
+const { promedio, notaMayor, codigoMejor } = require('../ejercicio22');
 
 describe('Ejercicio 22 - Estadísticas de notas', () => {
   test('Debe calcular estadísticas correctamente', () => {
@@ -20,4 +21,21 @@ describe('Ejercicio 22 - Estadísticas de notas', () => {
     ];
     expect(() => calcularEstadisticasNotas(notasInvalidas)).toThrow();
   });
-}); 
+});
+
+describe('Ejercicio 22 - Estadísticas de notas de clase (sin funciones ni arrays)', () => {
+  // Los datos de entrada están definidos en `ejercicio22.js`.
+  test('Debe calcular el promedio, la nota mayor y el código del mejor estudiante', () => {
+    // Notas válidas: 8, 9, 5, 10
+    // Promedio: (8 + 9 + 5 + 10) / 4 = 8
+    // Nota Mayor: 10
+    // Código del Mejor: 'A06'
+    const esperadoPromedio = 8
+    const esperadoNotaMayor = 10
+    const esperadoCodigoMejor = 'A06'
+
+    expect(promedio).toBe(esperadoPromedio)
+    expect(notaMayor).toBe(esperadoNotaMayor)
+    expect(codigoMejor).toBe(esperadoCodigoMejor)
+  })
+}) 

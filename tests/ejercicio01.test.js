@@ -1,42 +1,22 @@
-const { calcularPromedioWhile, calcularPromedioFor, calcularPromedioDoWhile } = require('../ejercicio01')
+const { promedioWhile, promedioFor, promedioDoWhile } = require('../ejercicio01')
 
-describe('Ejercicio 1 - Cálculo de promedio de notas', () => {
-  const casos = [
-    {
-      notas: [7, 8, 9, -1],
-      esperado: 8
-    },
-    {
-      notas: [10, 10, 10, -1],
-      esperado: 10
-    },
-    {
-      notas: [5, 7, 6, 8, 9, -1],
-      esperado: 7
-    }
-  ]
+describe('Ejercicio 1 - Cálculo de promedio de notas (sin funciones ni arrays)', () => {
+  // Las notas de entrada están definidas en `ejercicio01.js` como:
+  // const nota1 = 7;
+  // const nota2 = 8;
+  // const nota3 = 9;
+  // const notaFinal = -1;
+  const esperado = 8
 
-  describe('Usando while', () => {
-    casos.forEach(({ notas, esperado }) => {
-      test(`debe calcular promedio ${esperado} para notas ${notas.slice(0, -1)}`, () => {
-        expect(calcularPromedioWhile(notas)).toBe(esperado)
-      })
-    })
+  test('debe calcular el promedio usando while', () => {
+    expect(promedioWhile).toBe(esperado)
   })
 
-  describe('Usando for', () => {
-    casos.forEach(({ notas, esperado }) => {
-      test(`debe calcular promedio ${esperado} para notas ${notas.slice(0, -1)}`, () => {
-        expect(calcularPromedioFor(notas)).toBe(esperado)
-      })
-    })
+  test('debe calcular el promedio usando for', () => {
+    expect(promedioFor).toBe(esperado)
   })
 
-  describe('Usando do-while', () => {
-    casos.forEach(({ notas, esperado }) => {
-      test(`debe calcular promedio ${esperado} para notas ${notas.slice(0, -1)}`, () => {
-        expect(calcularPromedioDoWhile(notas)).toBe(esperado)
-      })
-    })
+  test('debe calcular el promedio usando do-while', () => {
+    expect(promedioDoWhile).toBe(esperado)
   })
 })
